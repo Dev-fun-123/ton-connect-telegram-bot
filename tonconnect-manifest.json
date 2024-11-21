@@ -1,0 +1,7 @@
+{
+    "url": "https://ton-connect-telegram-bot.onrender.com", 
+    "name": "TON Connect Wallet",
+    "description": "Connect to your Telegram Wallet and view balance",
+    "icon": "https://your-icon-url.com/icon.png", 
+    "twaReturnUrl": "https://t.me/trsTon_mini_app_bot"
+}
