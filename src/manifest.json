@@ -1,5 +1,5 @@
 {
-    "url": "https://<YOUR_APP_URL>/",
+    "url": "https://ton-connect-telegram-bot.onrender.com",
     "name": "TON Connect Wallet",
     "description": "Connect to your Telegram Wallet and view balance",
     "icon": "https://<YOUR_ICON_URL>",

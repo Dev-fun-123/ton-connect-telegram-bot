@@ -5,5 +5,5 @@ const bot = new TelegramBot(token, {polling: true});
 
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
-    bot.sendMessage(chatId, 'Welcome! Please connect your wallet using this link: https://<YOUR_APP_URL>');
+    bot.sendMessage(chatId, 'Welcome! Please connect your wallet using this link: https://ton-connect-telegram-bot.onrender.com');
 });
