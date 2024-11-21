@@ -1,7 +1,11 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors'); // Import CORS
 
 const app = express();
+
+// Cung cấp CORS cho mọi yêu cầu
+app.use(cors());
 
 // Sử dụng cổng từ biến môi trường hoặc mặc định là 3000
 const port = process.env.PORT || 3000;
