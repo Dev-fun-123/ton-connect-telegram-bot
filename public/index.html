@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TON Connect Wallet</title>
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #ton-connect {
+            padding: 10px 20px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #wallet-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TON Connect Wallet</h1>
+    <div id="ton-connect">Connect to Wallet</div>
+
+    <div id="wallet-info" style="display: none;">
+        <h2>Wallet Information</h2>
+        <p><strong>Address:</strong> <span id="wallet-address"></span></p>
+        <p><strong>Balance:</strong> <span id="wallet-balance"></span> Toncoin</p>
+    </div>
+
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://<YOUR_APP_URL>/tonconnect-manifest.json',
+            buttonRootId: 'ton-connect'
+        });
+
+        document.getElementById('ton-connect').addEventListener('click', async function() {
+            try {
+                const connectedWallet = await tonConnectUI.connectWallet();
+                console.log('Connected Wallet:', connectedWallet);
+
+                document.getElementById('wallet-address').textContent = connectedWallet.address;
+
+                const balance = await getWalletBalance(connectedWallet.address);
+                document.getElementById('wallet-balance').textContent = balance;
+
+                document.getElementById('wallet-info').style.display = 'block';
+            } catch (error) {
+                console.error('Error connecting to wallet:', error);
+            }
+        });
+
+        async function getWalletBalance(address) {
+            // Thực hiện một API gọi để lấy số dư ví, hiện tại chỉ giả lập giá trị.
+            return Math.random() * 100; // Random balance for demo
+        }
+    </script>
+</body>
+</html>

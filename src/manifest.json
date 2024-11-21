@@ -1,0 +1,9 @@
+{
+    "url": "https://<YOUR_APP_URL>/",
+    "name": "TON Connect Wallet",
+    "description": "Connect to your Telegram Wallet and view balance",
+    "icon": "https://<YOUR_ICON_URL>",
+    "twaReturnUrl": "https://t.me/trsTon_mini_app_bot"
+  }
+
+  
