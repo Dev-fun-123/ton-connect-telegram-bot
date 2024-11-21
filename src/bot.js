@@ -5,5 +5,21 @@ const bot = new TelegramBot(token, {polling: true});
 
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
-    bot.sendMessage(chatId, 'Welcome! Please connect your wallet using this link: https://ton-connect-telegram-bot.onrender.com');
+    const message = 'Welcome! Please connect your wallet using this link:';
+
+    // Liên kết đến Telegram Mini App của bạn
+    const miniAppLink = 'https://t.me/trsTon_mini_app_bot'; // Đảm bảo là link Telegram đúng
+
+    bot.sendMessage(chatId, message, {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {
+                        text: 'Open Mini App',  // Nút để mở Mini App
+                        url: miniAppLink        // Liên kết đến mini app của bạn
+                    }
+                ]
+            ]
+        }
+    });
 });
